@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 2MONEY - Sistema de Investimentos</title>
+
+    <!-- IMPORTA O CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 2MONEY</h1>
+            <div class="user-name" id="user-name-display">Olá, Investidor!</div>
+        </div>
+
+        <div class="main-content">
+
+            <!-- Painel de Investimentos -->
+            <div class="card">
+                <h2>📊 Meu Progresso de Investimento</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="total-investido">R$ 0</div>
+                        <div class="stat-label">Total Investido</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="meta-valor">R$ 0</div>
+                        <div class="stat-label">Meta</div>
+                    </div>
+                </div>
+
+                <div class="grafico-container">
+                    <div class="grafico-info">
+                        <span>Progresso</span>
+                        <span id="percentual-meta">0%</span>
+                    </div>
+                    <div class="grafico-bar">
+                        <div class="grafico-fill" id="grafico-progresso" style="width: 0%">0%</div>
+                    </div>
+                    <div class="grafico-info" style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                        <span id="falta-valor">Falta: R$ 0</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button class="btn btn-primary" onclick="abrirModalInvestimento()" style="flex: 1;">➕ Registrar Investimento</button>
+                    <button class="btn btn-warning" onclick="abrirModalEditarMeta()" style="flex: 1;">🎯 Alterar Meta</button>
+                </div>
+
+                <h3 style="margin-top: 30px; color: #1e3c72;">📋 Meus Investimentos</h3>
+                <div class="investimentos-lista" id="investimentos-lista">
+                    <p style="text-align: center; color: #999; padding: 20px;">Nenhum investimento registrado ainda</p>
+                </div>
+            </div>
+
+            <!-- Painel de Metas -->
+            <div class="card metas-section">
+                <h2>🎯 Minhas Metas Semanais</h2>
+                <p style="color: #666; margin-bottom: 20px;">Complete metas para ganhar XP e subir de nível!</p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-value" id="xp-total">0 XP</div>
+                        <div class="stat-label">XP Total</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="metas-concluidas">0</div>
+                        <div class="stat-label">Metas Concluídas</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-success" onclick="abrirModalMeta()" style="width: 100%; margin-top: 20px;">➕ Criar Nova Meta</button>
+
+                <div id="metas-lista" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- Painel de Conquistas -->
+         <div class="top-sections">
+    
+  
+        <div class="conquistas-box">
+            <h3>🏆 Minhas Conquistas</h3>
+            <div id="conquistas-lista"></div>
+            <div style="margin-top: 15px;">
+                <span class="nivel-badge" id="nivel-badge">Nível 1</span>
+            </div>
+            <div class="xp-info">
+                <div style="display: flex; justify-content: space-between; font-size: 0.9em; margin-bottom: 5px;">
+                    <span id="xp-atual">0 XP</span>
+                    <span id="xp-proximo">500 XP</span>
+                </div>
+                <div class="xp-bar-conquista">
+                    <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
